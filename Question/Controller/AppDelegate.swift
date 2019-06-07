@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Question
+//  BrainStorm
 //
 //  Created by Султан Дауренбек on 6/5/19.
 //  Copyright © 2019 Султан Дауренбек. All rights reserved.
