@@ -28,7 +28,8 @@ class FrontViewController: UIViewController {
     
     @IBAction func buttonpressed(_ sender: Any) {
         if username.text != ""{
-            FrontViewController.str = username.text!; performSegue(withIdentifier: "showQuiz", sender: self)
+            FrontViewController.str = username.text!; let controller = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+            self.present(controller, animated: true)
         }
         else {
             let alert = UIAlertController(title: "Error", message: "Fill out your name", preferredStyle: .alert)

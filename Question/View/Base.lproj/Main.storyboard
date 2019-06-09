@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RI8-rM-f79">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Nx-iu-xOo">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,26 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="1jg-wg-8oQ">
-            <objects>
-                <navigationController id="RI8-rM-f79" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pki-ct-fhd">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="4Nx-iu-xOo" kind="relationship" relationship="rootViewController" id="Zif-Zu-WkN"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ig6-uU-GPx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1238" y="11"/>
-        </scene>
         <!--Front View Controller-->
         <scene sceneID="46W-ay-Gtb">
             <objects>
-                <viewController storyboardIdentifier="frontviewcontroller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4Nx-iu-xOo" customClass="FrontViewController" customModule="Question" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FrontViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4Nx-iu-xOo" customClass="FrontViewController" customModule="Question" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HtH-CY-vfn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,7 +99,6 @@
                     <connections>
                         <outlet property="startbutton" destination="D8d-Bw-frX" id="iek-C8-lWg"/>
                         <outlet property="username" destination="R2e-jr-MQB" id="PNE-Qi-6ld"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="showQuiz" id="3xz-u6-GxW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZO-rU-0fb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -125,7 +108,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Question" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="Question" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -146,7 +129,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X/25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSG-Dz-veF">
-                                        <rect key="frame" x="8" y="40" width="52.5" height="25.5"/>
+                                        <rect key="frame" x="8" y="40" width="50" height="25.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -154,18 +137,14 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="zEI-4z-HQz" secondAttribute="bottom" constant="47.5" id="1al-Vp-RH8"/>
                                     <constraint firstItem="jSG-Dz-veF" firstAttribute="leading" secondItem="Dlm-E4-IDx" secondAttribute="leading" constant="8" id="5em-3B-nFe"/>
                                     <constraint firstItem="2y6-en-5tP" firstAttribute="top" secondItem="Dlm-E4-IDx" secondAttribute="topMargin" id="EP6-5E-RO4"/>
                                     <constraint firstItem="jSG-Dz-veF" firstAttribute="top" secondItem="Dlm-E4-IDx" secondAttribute="top" constant="40" id="O7z-yH-UUC"/>
-                                    <constraint firstAttribute="bottom" secondItem="zEI-4z-HQz" secondAttribute="bottom" constant="47.5" id="QUC-Zq-g8i"/>
-                                    <constraint firstItem="zEI-4z-HQz" firstAttribute="leading" secondItem="jSG-Dz-veF" secondAttribute="trailing" constant="91" id="cca-PG-fEo"/>
-                                    <constraint firstItem="zEI-4z-HQz" firstAttribute="centerX" secondItem="Dlm-E4-IDx" secondAttribute="centerX" id="jna-nl-Gf2"/>
-                                    <constraint firstItem="zEI-4z-HQz" firstAttribute="top" secondItem="Dlm-E4-IDx" secondAttribute="top" constant="26" id="ntw-IQ-4Nw"/>
-                                    <constraint firstItem="zEI-4z-HQz" firstAttribute="top" secondItem="Dlm-E4-IDx" secondAttribute="top" constant="26" id="ota-yX-C2H"/>
+                                    <constraint firstItem="zEI-4z-HQz" firstAttribute="leading" secondItem="jSG-Dz-veF" secondAttribute="trailing" constant="93.5" id="PCr-7g-f9X"/>
+                                    <constraint firstItem="zEI-4z-HQz" firstAttribute="centerX" secondItem="Dlm-E4-IDx" secondAttribute="centerX" id="jZP-1u-nsv"/>
+                                    <constraint firstItem="zEI-4z-HQz" firstAttribute="top" secondItem="Dlm-E4-IDx" secondAttribute="top" constant="26" id="mNr-OO-5sm"/>
                                     <constraint firstItem="jSG-Dz-veF" firstAttribute="leading" secondItem="Dlm-E4-IDx" secondAttribute="leading" constant="8" id="qbr-Ji-r0j"/>
                                     <constraint firstAttribute="height" constant="101" id="r8f-xX-7fa"/>
-                                    <constraint firstItem="zEI-4z-HQz" firstAttribute="centerX" secondItem="Dlm-E4-IDx" secondAttribute="centerX" id="v1F-zB-nBU"/>
                                     <constraint firstItem="2y6-en-5tP" firstAttribute="centerX" secondItem="Dlm-E4-IDx" secondAttribute="centerX" id="vm8-Kv-Sp6"/>
                                 </constraints>
                             </view>
@@ -303,7 +282,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="VgT-nO-RQB"/>
                     <connections>
                         <outlet property="Mistakes" destination="Ult-Ms-V3R" id="NEx-SU-dbl"/>
                         <outlet property="QuestionCounter" destination="jSG-Dz-veF" id="dkW-MK-0SU"/>
@@ -396,7 +374,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="4Nx-iu-xOo" kind="show" id="rQO-bV-DDH"/>
+                                    <segue destination="4Nx-iu-xOo" kind="show" id="ge5-uT-rt1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -435,7 +413,4 @@
         <image name="backgroundimg1" width="145" height="175"/>
         <image name="flag1" width="300" height="158"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="rQO-bV-DDH"/>
-    </inferredMetricsTieBreakers>
 </document>

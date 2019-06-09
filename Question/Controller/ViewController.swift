@@ -48,10 +48,7 @@ class ViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-    func updateState(button: UIButton) {
-        button.backgroundColor = .black
-        button.isUserInteractionEnabled = true
-    }
+  
     @objc func enableButton() {
     
         
@@ -178,7 +175,7 @@ class ViewController: UIViewController {
     
     func updateUI(){
         Score.text = "Score: \(score)"
-        Mistakes.text = "Mistakes \(mistakes)"
+        Mistakes.text = "Mistakes: \(mistakes)"
         nameuser.text="\(FrontViewController.str )"
         QuestionCounter.text = "\(questionNumber + 1)/\(allQuestions.list.count)"
        

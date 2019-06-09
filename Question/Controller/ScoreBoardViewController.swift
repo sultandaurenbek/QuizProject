@@ -34,10 +34,15 @@ class ScoreBoardViewController: UIViewController, UITableViewDataSource, UITable
    
     @IBAction func restaract(_ sender: Any) {
   
+      
+        
+       /* let controller = self.storyboard?.instantiateViewController(withIdentifier: "FrontViewController") as! FrontViewController
+        self.present(controller, animated: true)
+        */
         let firstController = ViewController()
         
         firstController.restartQuiz()
-      
+       
         
     
     
