@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D50066F522AC46E900A5B260 /* ScoreBoardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50066F422AC46E900A5B260 /* ScoreBoardViewCell.swift */; };
+		D50066F722AC52BF00A5B260 /* PlayerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50066F622AC52BF00A5B260 /* PlayerList.swift */; };
+		D50066F922ACDE3400A5B260 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50066F822ACDE3400A5B260 /* Player.swift */; };
+		D545B97B22AC43A000091270 /* ScoreBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D545B97A22AC43A000091270 /* ScoreBoardViewController.swift */; };
 		D5B8082122A7B28800144A31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B8082022A7B28800144A31 /* AppDelegate.swift */; };
 		D5B8082322A7B28800144A31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B8082222A7B28800144A31 /* ViewController.swift */; };
 		D5B8082622A7B28800144A31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5B8082422A7B28800144A31 /* Main.storyboard */; };
@@ -29,6 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D50066F422AC46E900A5B260 /* ScoreBoardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoardViewCell.swift; sourceTree = "<group>"; };
+		D50066F622AC52BF00A5B260 /* PlayerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerList.swift; sourceTree = "<group>"; };
+		D50066F822ACDE3400A5B260 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		D545B97A22AC43A000091270 /* ScoreBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoardViewController.swift; sourceTree = "<group>"; };
 		D5B8081D22A7B28800144A31 /* Question.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Question.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B8082022A7B28800144A31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5B8082222A7B28800144A31 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +114,7 @@
 				D5B8082022A7B28800144A31 /* AppDelegate.swift */,
 				D5B8082222A7B28800144A31 /* ViewController.swift */,
 				D5C4889222A8FD77006CE2F0 /* FrontViewController.swift */,
+				D545B97A22AC43A000091270 /* ScoreBoardViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -115,6 +124,7 @@
 			children = (
 				D5B8082422A7B28800144A31 /* Main.storyboard */,
 				D5B8082722A7B28900144A31 /* Assets.xcassets */,
+				D50066F422AC46E900A5B260 /* ScoreBoardViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,6 +143,8 @@
 			children = (
 				D5F660B722A842910055C461 /* Question.swift */,
 				D5F660B922A845640055C461 /* QuestionList.swift */,
+				D50066F622AC52BF00A5B260 /* PlayerList.swift */,
+				D50066F822ACDE3400A5B260 /* Player.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -239,9 +251,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5F660B822A842910055C461 /* Question.swift in Sources */,
+				D50066F722AC52BF00A5B260 /* PlayerList.swift in Sources */,
 				D5F660BA22A845640055C461 /* QuestionList.swift in Sources */,
+				D50066F522AC46E900A5B260 /* ScoreBoardViewCell.swift in Sources */,
 				D5C4889322A8FD77006CE2F0 /* FrontViewController.swift in Sources */,
+				D545B97B22AC43A000091270 /* ScoreBoardViewController.swift in Sources */,
 				D5B8082322A7B28800144A31 /* ViewController.swift in Sources */,
+				D50066F922ACDE3400A5B260 /* Player.swift in Sources */,
 				D5B8082122A7B28800144A31 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

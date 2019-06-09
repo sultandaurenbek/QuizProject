@@ -11,9 +11,13 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var nameuser: UILabel!
+    
+ 
     @IBOutlet weak var QuestionCounter: UILabel!
+    
+    
     @IBOutlet weak var Score: UILabel!
-    @IBOutlet weak var progresview: UIView!
+ 
     @IBOutlet weak var flagview: UIImageView!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var questionlabel: UILabel!
@@ -31,6 +35,7 @@ class ViewController: UIViewController {
     var score: Int = 0
     var mistakes: Int = 0
     var selectedAnswer: Int = 0
+    static var lastscore: Int  = 0
     
     
     override func viewDidLoad() {
@@ -69,6 +74,11 @@ class ViewController: UIViewController {
         showcorrectanswer()
       
     }
+    func seescore(){
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "scoreBoardViewController") as! ScoreBoardViewController
+        self.present(controller, animated: true)
+        
+    }
  func showcorrectanswer(){
     
           questionNumber += 1
@@ -90,7 +100,7 @@ class ViewController: UIViewController {
           
             sender.backgroundColor = .green
         
-            _ = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(enableButton), userInfo: nil, repeats: false)
+            _ = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(enableButton), userInfo: nil, repeats: false)
             optionA.isUserInteractionEnabled = false
             optionB.isUserInteractionEnabled = false
             optionC.isUserInteractionEnabled = false
@@ -118,7 +128,7 @@ class ViewController: UIViewController {
                 optionD.backgroundColor = .green
             }
            
-             _ = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(enableButton), userInfo: nil, repeats: false)
+             _ = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(enableButton), userInfo: nil, repeats: false)
             mistakes += 1
             optionA.isUserInteractionEnabled = false
             optionB.isUserInteractionEnabled = false
@@ -145,7 +155,7 @@ class ViewController: UIViewController {
     
     func updateQuestion(){
       
-        if questionNumber < allQuestions.list.count{
+        if questionNumber <= allQuestions.list.count - 1{
             flagview.image = UIImage(named:(allQuestions.list[questionNumber].questionImage))
             questionlabel.text=allQuestions.list[questionNumber].question
             optionA.setTitle(allQuestions.list[questionNumber].optionA, for:UIControl.State.normal)
@@ -156,12 +166,12 @@ class ViewController: UIViewController {
           
  
      
-        }else{
-            let alert = UIAlertController(title: "Awesome",message: "End of Quiz. Do you want to start over?",preferredStyle:.alert)
-            let restartAction = UIAlertAction(title: "Restart", style: .default, handler: {action in self.restartQuiz()})
-            alert.addAction(restartAction)
-            present(alert, animated: true, completion: nil)
+        }else {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "scoreBoardViewController") as! ScoreBoardViewController
+            self.present(controller, animated: true)
             
+          
+
         }
         updateUI()
     }
@@ -171,13 +181,13 @@ class ViewController: UIViewController {
         Mistakes.text = "Mistakes \(mistakes)"
         nameuser.text="\(FrontViewController.str )"
         QuestionCounter.text = "\(questionNumber + 1)/\(allQuestions.list.count)"
-        progresview.frame.size.width = (view.frame.size.width / CGFloat(allQuestions.list.count)) * CGFloat(questionNumber + 1)
-      
+       
+     ViewController.lastscore = score
  
    
     }
     
-    func restartQuiz(){
+ func restartQuiz(){
         score = 0
         questionNumber = 0
         updateQuestion()

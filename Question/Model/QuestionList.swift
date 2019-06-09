@@ -23,5 +23,13 @@ class QuestionList{
         list.append(Question(image: "flag5", questionText: "Физиология изучает?", choiceA: "Строение тканей", choiceB: "Жизнедеятельность организма", choiceC: "Химическии состав клеток", choiceD: "Взаимоотношение организма", answer: 2))
         
         list.append(Question(image: "flag6", questionText: "Совокупность особей одного вида, имеющих единый генофонд и занимающих единую территорию называется?", choiceA: "Популяцией", choiceB: "Биоценозм", choiceC: "Биосферой", choiceD: "Биогеценозм", answer: 1))
+        
+        list.append(Question(image: "flag7", questionText: "Какую страну в средние века называли 'низовые земли' ?", choiceA: "Болгарию", choiceB: "Египет", choiceC: "Португалию", choiceD: "Нидерланды", answer: 4))
+        
+         list.append(Question(image: "flag8", questionText: "Укажите страны, которые являются ведущими в мире по экспорту серной кислоты", choiceA: "Япония,Бельгия", choiceB: "Германия,Япония", choiceC: "США,Германия", choiceD: "Бельгия,США", answer: 3))
+        
+        list.append(Question(image: "flag9", questionText: "Какая страна стала первой в мире, узаконившей однополые браки?", choiceA: "Нидерланды", choiceB: "Канада", choiceC: "Австрия", choiceD: "США", answer: 1))
+        
+           list.append(Question(image: "flag10", questionText: "В каком городе проходили Зимние Олимпийские игры в 2014 году?", choiceA: "В Саратове", choiceB: "В Самаре", choiceC: "В Москве", choiceD: "в Сочи", answer: 4))
     }
 }

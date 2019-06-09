@@ -30,7 +30,16 @@ class FrontViewController: UIViewController {
         if username.text != ""{
             FrontViewController.str = username.text!; performSegue(withIdentifier: "showQuiz", sender: self)
         }
+        else {
+            let alert = UIAlertController(title: "Error", message: "Fill out your name", preferredStyle: .alert)
+            let okButton = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(okButton)
+            self.present(alert, animated: true)
+        
+        
     }
+}
+}
     
     
     
@@ -46,4 +55,4 @@ class FrontViewController: UIViewController {
     }
     */
 
-}
+
