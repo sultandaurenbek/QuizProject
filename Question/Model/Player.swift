@@ -8,12 +8,17 @@
 
 import Foundation
 class Player {
+
+    var level: String = ""
     var username: String = ""
     var score: Int = 0
+
     
-    init( score: Int,username: String){
-       
+    init( score: Int,username: String, level: String){
+       self.level = level
         self.score = score
          self.username = username
+        
     }
 }
+

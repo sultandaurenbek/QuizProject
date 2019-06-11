@@ -12,10 +12,20 @@ class FrontViewController: UIViewController {
     
     @IBOutlet weak var username: UITextField!
     
-
+    @IBOutlet weak var mathbtn: UIButton!
+    
+    @IBOutlet weak var historybtn: UIButton!
+    
+    @IBOutlet weak var biologybtn: UIButton!
+    
     @IBOutlet weak var startbutton: UIButton!
     
+ 
+
     static var str: String = ""
+      static var level: String = ""
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,13 +36,44 @@ class FrontViewController: UIViewController {
     
     }
     
+    @IBAction func mathpressed(_ sender: Any) {
+            FrontViewController.level = ""
+        mathbtn.backgroundColor = .yellow
+        historybtn.backgroundColor = .white
+        biologybtn.backgroundColor = .white
+         FrontViewController.level = "Math"
+        
+    }
+    
+    @IBAction func historypressed(_ sender: Any) {
+       FrontViewController.level = ""
+        historybtn.backgroundColor = .yellow
+       mathbtn.backgroundColor = .white
+        biologybtn.backgroundColor = .white
+        FrontViewController.level = "History"
+       
+    }
+    
+    
+    @IBAction func biologypressed(_ sender: Any) {
+        FrontViewController.level = ""
+        biologybtn.backgroundColor = .yellow
+        historybtn.backgroundColor = .white
+        mathbtn.backgroundColor = .white
+          FrontViewController.level = "Biology"
+    }
+    
     @IBAction func buttonpressed(_ sender: Any) {
-        if username.text != ""{
-            FrontViewController.str = username.text!; let controller = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        if username.text != "" && FrontViewController.level != ""{
+            FrontViewController.str = username.text!;
+           
+            
+            
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
             self.present(controller, animated: true)
         }
         else {
-            let alert = UIAlertController(title: "Error", message: "Fill out your name", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Error", message: "Fill out your name and select the section", preferredStyle: .alert)
             let okButton = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alert.addAction(okButton)
             self.present(alert, animated: true)

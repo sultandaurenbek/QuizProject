@@ -9,17 +9,20 @@
 import Foundation
 import UIKit
 class PlayerList{
-var table = [Player] ()
-
-
+var table: [Player] = []
+    var player1 = Player(score: ViewController.lastscore, username: "\(FrontViewController.str)", level: FrontViewController.level )
+    
+//var players: [Player] = []
+    
 
 init(){
+    
+  table.append(player1)
    
-  table.append(Player(score: ViewController.lastscore,username: "\(FrontViewController.str)"))
    
-}
 }
 
+}
 
    
 

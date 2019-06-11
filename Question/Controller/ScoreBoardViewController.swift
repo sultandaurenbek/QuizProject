@@ -9,7 +9,10 @@
 import UIKit
 
 class ScoreBoardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    let source = PlayerList()
+   
+    var players = PlayerList()
+    var students: [PlayerList] = []
+      
     @IBOutlet weak var playrTableView: UITableView!
     
     
@@ -22,31 +25,28 @@ class ScoreBoardViewController: UIViewController, UITableViewDataSource, UITable
         playrTableView.dataSource = self
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return source.table.count
+        return players.table.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let play = source.table[indexPath.row]
+        let play = players.table[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "scoreBoardCell", for: indexPath) as! ScoreBoardViewCell
-        cell.setScoreBoardCell(username: play, score: play)
+        cell.setScoreBoardCell(username: play, score: play, level: play)
+     
         return cell
     }
     
-   
-    @IBAction func restaract(_ sender: Any) {
-  
-      
+    
+    @IBAction func restartpress(_ sender: Any) {
         
-       /* let controller = self.storyboard?.instantiateViewController(withIdentifier: "FrontViewController") as! FrontViewController
-        self.present(controller, animated: true)
-        */
-        let firstController = ViewController()
-        
-        firstController.restartQuiz()
+        print("\(players.table.count)")
+       
        
         
-    
-    
-  
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "FrontViewController") as! FrontViewController
+        self.present(controller, animated: true)
     }
+    
+
 }
+
 

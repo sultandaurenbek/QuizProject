@@ -12,7 +12,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var nameuser: UILabel!
     
- 
+    @IBOutlet weak var levellabel: UILabel!
+    
     @IBOutlet weak var QuestionCounter: UILabel!
     
     
@@ -29,13 +30,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var optionB: UIButton!
     @IBOutlet weak var optionC: UIButton!
     @IBOutlet weak var optionD: UIButton!
-    
+   
     let allQuestions = QuestionList()
     var questionNumber: Int = 0
     var score: Int = 0
     var mistakes: Int = 0
     var selectedAnswer: Int = 0
     static var lastscore: Int  = 0
+ 
     
     
     override func viewDidLoad() {
@@ -152,33 +154,65 @@ class ViewController: UIViewController {
     
     func updateQuestion(){
       
-        if questionNumber <= allQuestions.list.count - 1{
-            flagview.image = UIImage(named:(allQuestions.list[questionNumber].questionImage))
-            questionlabel.text=allQuestions.list[questionNumber].question
-            optionA.setTitle(allQuestions.list[questionNumber].optionA, for:UIControl.State.normal)
-            optionB.setTitle(allQuestions.list[questionNumber].optionB, for:UIControl.State.normal)
-            optionC.setTitle(allQuestions.list[questionNumber].optionC, for:UIControl.State.normal)
-            optionD.setTitle(allQuestions.list[questionNumber].optionD, for:UIControl.State.normal)
-            selectedAnswer = allQuestions.list[questionNumber].correctAnswer
-          
- 
-     
-        }else {
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "scoreBoardViewController") as! ScoreBoardViewController
+            if FrontViewController.level == "History" && questionNumber <= allQuestions.listhistory.count - 1
+            {
+             
+                flagview.image = UIImage(named:(allQuestions.listhistory[questionNumber].questionImage))
+                questionlabel.text=allQuestions.listhistory[questionNumber].question
+                optionA.setTitle(allQuestions.listhistory[questionNumber].optionA, for:UIControl.State.normal)
+                optionB.setTitle(allQuestions.listhistory[questionNumber].optionB, for:UIControl.State.normal)
+                optionC.setTitle(allQuestions.listhistory[questionNumber].optionC, for:UIControl.State.normal)
+                optionD.setTitle(allQuestions.listhistory[questionNumber].optionD, for:UIControl.State.normal)
+                selectedAnswer = allQuestions.listhistory[questionNumber].correctAnswer
+            }
+        
+                    
+        
+       else if FrontViewController.level == "Biology" && questionNumber <= allQuestions.listbiology.count - 1
+            {
+                
+            flagview.image = UIImage(named:(allQuestions.listbiology[questionNumber].questionImage))
+            questionlabel.text=allQuestions.listbiology[questionNumber].question
+            optionA.setTitle(allQuestions.listbiology[questionNumber].optionA, for:UIControl.State.normal)
+            optionB.setTitle(allQuestions.listbiology[questionNumber].optionB, for:UIControl.State.normal)
+            optionC.setTitle(allQuestions.listbiology[questionNumber].optionC, for:UIControl.State.normal)
+            optionD.setTitle(allQuestions.listbiology[questionNumber].optionD, for:UIControl.State.normal)
+            selectedAnswer = allQuestions.listbiology[questionNumber].correctAnswer
+            }
+            else if FrontViewController.level == "Math" && questionNumber <= allQuestions.listmath.count - 1
+            {
+                
+                flagview.image = UIImage(named:(allQuestions.listmath[questionNumber].questionImage))
+                questionlabel.text=allQuestions.listmath[questionNumber].question
+                optionA.setTitle(allQuestions.listmath[questionNumber].optionA, for:UIControl.State.normal)
+                optionB.setTitle(allQuestions.listmath[questionNumber].optionB, for:UIControl.State.normal)
+                optionC.setTitle(allQuestions.listmath[questionNumber].optionC, for:UIControl.State.normal)
+                optionD.setTitle(allQuestions.listmath[questionNumber].optionD, for:UIControl.State.normal)
+                selectedAnswer = allQuestions.listmath[questionNumber].correctAnswer
+            }
+          else{
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "scoreBoardViewController") as! ScoreBoardViewController
             self.present(controller, animated: true)
             
-          
-
         }
-        updateUI()
+ updateUI()
     }
     
+    
     func updateUI(){
+        levellabel.text = "\(FrontViewController.level)"
         Score.text = "Score: \(score)"
         Mistakes.text = "Mistakes: \(mistakes)"
         nameuser.text="\(FrontViewController.str )"
-        QuestionCounter.text = "\(questionNumber + 1)/\(allQuestions.list.count)"
-       
+        if FrontViewController.level == "Biology"{
+        QuestionCounter.text = "\(questionNumber + 1)/\(allQuestions.listbiology.count)"
+        }
+        if FrontViewController.level == "History"{
+            QuestionCounter.text = "\(questionNumber + 1)/\(allQuestions.listhistory.count)"
+        }
+        if FrontViewController.level == "Math"{
+            QuestionCounter.text = "\(questionNumber + 1)/\(allQuestions.listmath.count)"
+        }
      ViewController.lastscore = score
  
    
